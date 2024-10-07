@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --white: hsl(0, 0%, 100%);
+    --Light-Pink: hsl(275, 100%, 97%);
+    --Grayish-Purple: hsl(292, 16%, 49%);
+    --Dark-Purple: hsl(292, 42%, 14%);
+    
+  }
+  
+  body {
+    font-family: "Work Sans", sans-serif;
+    background-color: var(--Light-Pink);
+    color: var(--Dark-Purple);
+    min-height: 100vh;
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%; 
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+  
+  .card {
+    background-color: var(--white);
+    padding: 2rem;
+    max-width: 56.25rem;
+    width: 100%;
+    border-radius: 0.9375rem; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  
+  .faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  
+  h2:hover {
+    color: var(--Grayish-Purple);
+   
+  }
+  
+  .answer {
+    color: var(--Grayish-Purple);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 1rem;
+    transition: max-height 0.4s ease, opacity 0.4s ease; 
+  }
+  
+  .faq-item.open .answer {
+    max-height: 15rem; 
+    opacity: 1;
+  }
+  
+  
+  
+  button.toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  button.toggle-btn img {
+    width: 1.25rem;  
+    height: 1.25rem; 
+}
+
+  
+  /* Mobile design */
+@media (max-width: 23.4375rem) { /* 375px = 23.4375rem */
+    .background {
+      background-image: url("assets/images/background-pattern-mobile.svg");
+      background-size: 100%; 
+    }
+  
+    .card {
+      margin: 4rem auto;
+      padding: 1.5rem;
+      gap: 1rem;
+      width: 20rem;
+      border-radius: 1rem; 
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h1{
+        font-size: 2rem;
+    }
+  }
+  
+  /* Desktop design */
+  @media (min-width: 23.5rem) { /* 376px = 23.5rem */
+    .background {
+      background-image: url("assets/images/background-pattern-desktop.svg");
+      height: 20rem; 
+    }
+  
+    .card {
+      margin: 5rem auto;
+      padding: 2rem;
+      gap: 1rem;
+      border-radius: 1.5rem; 
+      height: auto; 
+      width: 50rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  
